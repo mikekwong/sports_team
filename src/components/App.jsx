@@ -1,25 +1,25 @@
 import React, { Component } from 'react'
 import theSportsDb from '../api/theSportsDb'
-import SearchBar from './SearchBar'
-import TeamList from './TeamList'
+import TeamDetail from './TeamDetail'
 
 export default class App extends Component {
   constructor () {
     super()
     this.state = {
-      teams: [],
-      info: '',
+      details: [],
       error: null,
       isLoading: true
     }
   }
 
-  onSearchSubmit = async term => {
+  async componentDidMount () {
     try {
-      const { data } = await theSportsDb.get(`/searchteams.php?t=${term}`)
+      const { data } = await theSportsDb.get(
+        `/searchteams.php?t=new_york_red_bulls`
+      )
+      console.log(data.teams[0])
       this.setState({
-        info: 'Teams Found',
-        teams: data.teams,
+        details: data.teams[0],
         isLoading: false
       })
     } catch (error) {
@@ -31,15 +31,10 @@ export default class App extends Component {
   }
 
   render () {
-    const { teams, info, isLoading } = this.state
+    const { details, isLoading } = this.state
     return (
       <div className='container'>
-        <SearchBar onSubmit={this.onSearchSubmit} />
-        {!isLoading ? (
-          <TeamList teams={teams} info={info} />
-        ) : (
-          <p>...Loading</p>
-        )}
+        {!isLoading ? <TeamDetail details={details} /> : <p>...Loading</p>}
       </div>
     )
   }
