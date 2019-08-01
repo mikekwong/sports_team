@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import theSportsDb from '../api/theSportsDb'
-import TeamDetail from './TeamDetail'
+import Header from './Header'
+import Hero from './Hero'
+import Content from './Content'
 
 export default class App extends Component {
   constructor () {
@@ -34,7 +36,15 @@ export default class App extends Component {
     const { details, isLoading } = this.state
     return (
       <div className='container'>
-        {!isLoading ? <TeamDetail details={details} /> : <p>...Loading</p>}
+        {!isLoading ? (
+          <>
+            <Header details={details} />
+            <Hero details={details} />
+            <Content details={details} />
+          </>
+        ) : (
+          <p>...Loading</p>
+        )}
       </div>
     )
   }
