@@ -3,6 +3,7 @@ import theSportsDb from '../api/theSportsDb'
 import Header from './Header'
 import Hero from './Hero'
 import Content from './Content'
+import Hero2 from './Hero2'
 
 export default class App extends Component {
   constructor () {
@@ -41,6 +42,7 @@ export default class App extends Component {
             <Header details={details} />
             <Hero details={details} />
             <Content details={details} />
+            <Hero2 details={details} />
           </>
         ) : (
           <p>...Loading</p>

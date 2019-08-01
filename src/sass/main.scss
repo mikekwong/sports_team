@@ -4,6 +4,17 @@
 // Color imports:
 @import 'base/colors-fonts';
 
+// Header styles
+@import 'layout/header';
+
+// Hero styles
+@import 'layout/hero';
+
+// Content styles
+@import 'layout/content';
+
+// Reset CSS
+
 *,
 *::after,
 *::before {
@@ -16,136 +27,7 @@
 }
 
 body {
-  background: #091125;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAAXNSR0IArs4c6QAAACNJREFUCB1j5BRU/c+AAM+ZEGyG50C2JEwAzAFJggTgHJAAAMz2BS2A94PbAAAAAElFTkSuQmCC)
+    repeat;
   font-family: $montserrat;
-}
-
-.header_container {
-  margin-top: 20px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-
-  .logo {
-    width: 300px;
-    margin: 0 auto;
-
-    img {
-      width: 130px;
-    }
-
-    .logo-copy {
-      margin: 0 auto;
-      text-align: center;
-      font-size: 25px;
-      width: 200px;
-      color: $white;
-      & p:first-child {
-        font-weight: 900;
-      }
-      & p:nth-child(2) {
-        font-weight: 500;
-      }
-    }
-  }
-}
-
-.hero_text {
-  position: relative;
-  top: 200px;
-  color: $white;
-}
-
-.stadium {
-  //   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-  //     no-repeat center/180% url(../assets/stadium.jpg);
-  //   transition: 1s all;
-  //   height: 600px;
-  // width: 100%;
-  .gradient {
-    top: 165px;
-    position: absolute;
-    width: 100%;
-    height: 500px;
-    background: linear-gradient(
-      45deg,
-      rgba(240, 13, 13, 0.7),
-      rgba(63, 40, 165, 0.2)
-    );
-  }
-  img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-  }
-}
-
-@media all and (min-width: 600px) {
-  .header_container {
-    max-width: 1280px;
-
-    .logo {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      width: 600px;
-      margin: 20px 0 15px 0;
-
-      img {
-        width: 130px;
-      }
-
-      .logo-copy {
-        text-align: left;
-        font-size: 28px;
-        color: $white;
-        & p:first-child {
-          font-weight: 900;
-        }
-        & p:nth-child(2) {
-          font-weight: 500;
-        }
-      }
-    }
-  }
-}
-
-@media all and (min-width: 575px) {
-  .header_container {
-    width: 100%;
-
-    margin-left: 10%;
-    // justify-content: center;
-    // text-align: center;
-
-    .logo {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      width: 600px;
-      margin-top: 20px;
-      margin-bottom: 15px;
-
-      img {
-        width: 130px;
-      }
-
-      .logo-copy {
-        margin-top: 25px;
-        margin-left: 20px;
-        font-size: 30px;
-        width: 400px;
-        color: $white;
-        &:first-child {
-          font-weight: 900;
-        }
-        &:nth-child(2) {
-          font-weight: 500;
-        }
-      }
-    }
-  }
 }

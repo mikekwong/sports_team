@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Header = ({ details }) => {
-  const { strTeam, strTeamBadge, intFormedYear } = details
+  const { strTeam, strTeamBadge, intFormedYear, strCountry } = details
   return (
     <div>
       <header className='header_container'>
@@ -11,6 +11,9 @@ const Header = ({ details }) => {
             <p>{strTeam.toUpperCase()}</p>
             <p>{intFormedYear} - 2019</p>
           </div>
+        </div>
+        <div className='country-info'>
+          <p>{strCountry}</p>
         </div>
       </header>
     </div>
