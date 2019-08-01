@@ -17,34 +17,32 @@
 
 body {
   background: #091125;
+  font-family: $montserrat;
 }
 
 .header_container {
+  margin-top: 20px;
   width: 100%;
-
-  margin-left: 10%;
-  // justify-content: center;
-  // text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 
   .logo {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 600px;
-    margin-top: 20px;
-    margin-bottom: 15px;
+    width: 300px;
+    margin: 0 auto;
 
     img {
       width: 130px;
     }
 
     .logo-copy {
-      margin-top: 25px;
-      margin-left: 20px;
-      font-family: $montserrat;
-      font-size: 30px;
-      width: 400px;
-      color: #fff;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 25px;
+      width: 200px;
+      color: $white;
       & p:first-child {
         font-weight: 900;
       }
@@ -53,6 +51,12 @@ body {
       }
     }
   }
+}
+
+.hero_text {
+  position: relative;
+  top: 200px;
+  color: $white;
 }
 
 .stadium {
@@ -76,5 +80,72 @@ body {
     width: 100%;
     height: 500px;
     object-fit: cover;
+  }
+}
+
+@media all and (min-width: 600px) {
+  .header_container {
+    max-width: 1280px;
+
+    .logo {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 600px;
+      margin: 20px 0 15px 0;
+
+      img {
+        width: 130px;
+      }
+
+      .logo-copy {
+        text-align: left;
+        font-size: 28px;
+        color: $white;
+        & p:first-child {
+          font-weight: 900;
+        }
+        & p:nth-child(2) {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width: 575px) {
+  .header_container {
+    width: 100%;
+
+    margin-left: 10%;
+    // justify-content: center;
+    // text-align: center;
+
+    .logo {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 600px;
+      margin-top: 20px;
+      margin-bottom: 15px;
+
+      img {
+        width: 130px;
+      }
+
+      .logo-copy {
+        margin-top: 25px;
+        margin-left: 20px;
+        font-size: 30px;
+        width: 400px;
+        color: $white;
+        &:first-child {
+          font-weight: 900;
+        }
+        &:nth-child(2) {
+          font-weight: 500;
+        }
+      }
+    }
   }
 }
